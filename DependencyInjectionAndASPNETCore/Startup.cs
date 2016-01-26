@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using System.Net.Http;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,7 +37,8 @@ namespace DependencyInjectionAndASPNETCore
             // services.AddWebApiConventions();
 
             // Register application services.
-            services.AddTransient<IOrderStore, OrderStore>();
+            //services.AddSingleton<IOrderStore, OrderStore>();
+            //services.AddInstance<IOrderStore>(new OrderStore(new HttpClient()));
         }
 
         // Configure is called after ConfigureServices is called.
