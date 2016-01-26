@@ -32,10 +32,6 @@ namespace DependencyInjectionAndASPNETCore
             // Add MVC services to the services container.
             services.AddMvc();
 
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
-
             // Register application services.
             //services.AddSingleton<IOrderStore, OrderStore>();
             //services.AddInstance<IOrderStore>(new OrderStore(new HttpClient()));
@@ -67,30 +63,6 @@ namespace DependencyInjectionAndASPNETCore
             // Add static files to the request pipeline.
             app.UseStaticFiles();
 
-
-            // Add and configure the options for authentication middleware to the request pipeline.
-            // You can add options for middleware as shown below.
-            // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
-            //app.UseFacebookAuthentication(options =>
-            //{
-            //    options.AppId = Configuration["Authentication:Facebook:AppId"];
-            //    options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            //});
-            //app.UseGoogleAuthentication(options =>
-            //{
-            //    options.ClientId = Configuration["Authentication:Google:ClientId"];
-            //    options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-            //});
-            //app.UseMicrosoftAccountAuthentication(options =>
-            //{
-            //    options.ClientId = Configuration["Authentication:MicrosoftAccount:ClientId"];
-            //    options.ClientSecret = Configuration["Authentication:MicrosoftAccount:ClientSecret"];
-            //});
-            //app.UseTwitterAuthentication(options =>
-            //{
-            //    options.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
-            //    options.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"];
-            //});
 
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
