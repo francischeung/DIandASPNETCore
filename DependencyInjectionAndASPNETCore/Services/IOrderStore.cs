@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DependencyInjectionAndASPNETCore.Models;
 
 namespace DependencyInjectionAndASPNETCore.Services
 {
-    interface IOrderStore
+    public interface IOrderStore
     {
-        Task<Order> GetAsync(string orderId); 
-        Task SaveAsync(Order newOrder);
+        Task<IList<Order>> GetAllAsync(); 
     }
 }

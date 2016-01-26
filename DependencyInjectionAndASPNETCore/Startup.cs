@@ -36,8 +36,7 @@ namespace DependencyInjectionAndASPNETCore
             // services.AddWebApiConventions();
 
             // Register application services.
-            services.AddTransient<ISimpleLogger, DbSimpleLogger>();
-            //services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IOrderStore, OrderStore>();
         }
 
         // Configure is called after ConfigureServices is called.

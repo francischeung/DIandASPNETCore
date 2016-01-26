@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using DependencyInjectionAndASPNETCore.Models;
@@ -14,14 +14,10 @@ namespace DependencyInjectionAndASPNETCore.Services
             _httpClient = httpClient;
         }
 
-        public Task<Order> GetAsync(string orderId)
+        public Task<IList<Order>> GetAllAsync()
         {
-            return Task.FromResult(new Order());
-        }
-
-        public Task SaveAsync(Order newOrder)
-        {
-            return Task.FromResult(0);
+            Order[] orders = {new Order()};
+            return Task.FromResult((IList<Order>)new List<Order>(orders));
         }
     }
 }

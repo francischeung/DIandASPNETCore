@@ -1,0 +1,19 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "DependencyInjectionAndASPNETCore.Tests Class Library",
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "DependencyInjectionAndASPNETCore": "1.0.0-*",
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-*",
+    "Moq": "4.2.1507.118"
+  },
+  "commands": {
+    "test": "xunit.runner.dnx"
+  },
+  "frameworks": {
+    "dnx451": { }
+  }
+}
