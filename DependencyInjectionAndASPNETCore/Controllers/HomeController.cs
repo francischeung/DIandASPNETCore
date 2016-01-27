@@ -6,9 +6,17 @@ namespace DependencyInjectionAndASPNETCore.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IOrderStore _orderStore;
+
+        public HomeController(IOrderStore orderStore)
         {
-            return View();
+            _orderStore = orderStore;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var orders = await _orderStore.GetAllAsync();
+            return View(orders);
         }
 
         public IActionResult Error()

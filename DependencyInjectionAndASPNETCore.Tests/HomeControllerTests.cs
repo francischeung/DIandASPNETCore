@@ -11,20 +11,20 @@ namespace DependencyInjectionAndASPNETCore.Tests
 {
     public class HomeControllerTests
     {
-        //[Fact]
-        //public async Task Index_PopulatesViewWithOrders()
-        //{
-        //    List<Order> orders = new List<Order>();
-        //    orders.Add(new Order());
-        //    var mockOrderStore = new Mock<IOrderStore>();
-        //    mockOrderStore.Setup(orderStore => orderStore.GetAllAsync())
-        //        .ReturnsAsync(orders);
+        [Fact]
+        public async Task Index_PopulatesViewWithOrders()
+        {
+            List<Order> orders = new List<Order>();
+            orders.Add(new Order());
+            var mockOrderStore = new Mock<IOrderStore>();
+            mockOrderStore.Setup(orderStore => orderStore.GetAllAsync())
+                .ReturnsAsync(orders);
 
-        //    var target = new HomeController(mockOrderStore.Object);
-        //    var result = await target.Index();
-        //    var view = (ViewResult)result;
+            var target = new HomeController(mockOrderStore.Object);
+            var result = await target.Index();
+            var view = (ViewResult)result;
 
-        //    Assert.Same(view.ViewData.Model, orders);
-        //}
+            Assert.Same(view.ViewData.Model, orders);
+        }
     }
 }

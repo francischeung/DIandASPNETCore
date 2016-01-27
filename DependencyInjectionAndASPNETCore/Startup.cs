@@ -34,7 +34,7 @@ namespace DependencyInjectionAndASPNETCore
 
             // Register application services.
             //services.AddSingleton<IOrderStore, OrderStore>();
-            //services.AddInstance<IOrderStore>(new OrderStore(new HttpClient()));
+            services.AddInstance<IOrderStore>(new OrderStore(new HttpClient()));
         }
 
         // Configure is called after ConfigureServices is called.
